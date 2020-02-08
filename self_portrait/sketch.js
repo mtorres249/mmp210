@@ -26,14 +26,15 @@ function draw() {
 	strokeWeight(2);
 	fill("white");
 	ellipse(270, 120, 70, 50); // left eye
-	fill("white"); 
 	ellipse(370, 120, 70, 50); // right eye
-
 	noStroke();
 	fill("#1c1301"); 
-	circle(270, 120, 50,); // left pupil
-	fill("#1c1301"); 
-	circle(370, 120, 50,); // right pupil
+	circle(270, 127, 35,); // left pupil
+	circle(370, 127, 35,); // right pupil
+	noStroke();
+	fill("#d1b475");
+	ellipse(270, 103, 70, 20); // left eyelid
+	ellipse(370, 103, 70, 20); // right eyelid
 
 	stroke("black");
 	fill("#d1b475");
@@ -51,13 +52,37 @@ function draw() {
 	fill("#995494");
 	rect(290, 225, 55, 25, 15); // mouth
 
+	
+	// hair
+	noStroke();
+	fill("black");
+	circle(220, 60, 35);
+	circle(240, 44, 35);
+	circle(260, 35, 35);
+	circle(280, 30, 35);
+	circle(300, 25, 35);
+	circle(320, 25, 35);
+	circle(340, 25, 35);
+	circle(360, 25, 35);
+	circle(380, 30, 35);
+	circle(400, 40, 35);
+	circle(420, 60, 35);
+	// hair
+
+	rect(245, 85, 55, 8); // eyebrow
+	rect(340, 85, 55, 8); // eyebrow
+
 
 	// shapes that are only xy points
 	
 	stroke("black");
 	noFill();
-	line(310, 150, 290, 185); //nose
-	line(290, 185, 320, 185); //nose
+	line(310, 150, 290, 185); // nose
+	line(290, 185, 320, 185); // nose
+
+	line(290, 236, 343, 236)
+
+
 
 
 

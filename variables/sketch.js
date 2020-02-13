@@ -14,12 +14,12 @@ var s = 300;
 
 function setup() {
 	// setup scope
-	createCanvas(640, 360);
+	createCanvas(x * 2, y * 2);
 }
 
 function draw() {
 	// draw scope
-	background("gold");
+	background("#630000");
 
 	// shapes with xy coordinates + size
 
@@ -27,44 +27,48 @@ function draw() {
 
 	stroke("black");
 	strokeWeight(5);
-	fill("#d1b475");
+	fill("#d1d0be");
 	circle(x, y, s); // face
 
 	// eyes
 	stroke("black");
 	strokeWeight(2);
-	fill("white");
+	fill("#f2e935");
 	ellipse(x - 50, y - 60, s - 230, s - 250); // left eye
 	ellipse(x + 50, y - 60, s - 230, s - 250); // right eye
 	noStroke();
-	fill("#1c1301"); 
-	circle(x - 50, y - 53, s - 265,); // left pupil
-	circle(x + 50, y - 53, s - 265,); // right pupil
+	fill("black"); 
+	ellipse(x - 50, y - 53, s - 285, s - 265); // left pupil
+	ellipse(x + 50, y - 53, s - 285, s - 265); // right pupil
 	noStroke();
-	fill("#d1b475");
+	fill("#d1d0be");
 	ellipse(x - 50, y - 77, s - 230, s - 280); // left eyelid
 	ellipse(x + 50, y - 77, s - 230, s - 280); // right eyelid
 
 	stroke("black");
-	fill("#d1b475");
+	fill("#d1d0be");
 	arc(x + 141, y - 20, s - 240, s - 240, PI + HALF_PI, HALF_PI); // right ear
 	arc(x + 141, y - 20, s - 260, s - 260, PI + HALF_PI, HALF_PI); // left ear
 
-	fill("black");
+	fill("#031540");
 	arc(x, y + 20, s - 10, s - 45, TWO_PI, PI); // beard hair
 
-	fill("#d1b475");
+	fill("#d1d0be");
 	noStroke();
-	ellipse(x, y + 60, s - 200, s - 250); // beard mouth area
+	ellipse(x, y + 60, s - 200, s - 240); // beard mouth area
 	
 	stroke("black");
 	fill("#995494");
-	rect(x - 30, y + 45, 55, s - 275, s - 285); // mouth
+	triangle(x - 35, y + 40, x, y + 85, x + 35, y + 40); // mouth
+
+	fill("white");
+	triangle(x - 25, y + 40, x - 15, y + 55 , x - 5, y + 40); // left tooth
+	triangle(x + 5, y + 40, x + 15, y + 55 , x + 25, y + 40); // right tooth
 
 	
 	// hair
 	noStroke();
-	fill("black");
+	fill("#031540");
 	circle(x - 100, y - 120,s - 265);
 	circle(x - 80, y - 136, s - 265);
 	circle(x - 60, y - 145, s - 265);
@@ -78,18 +82,21 @@ function draw() {
 	circle(x + 100, y - 120, s - 265);
 	// hair
 
-	rect(x - 75, y - 95, 55, s - 292); // eyebrow
-	rect(x + 20, y - 95, 55, s - 292); // eyebrow
-
-
 	// shapes that are only xy points
+
+	stroke("#031540");
+	strokeWeight(10);
+	line(x - 75, y - 95, x - 20, y - 85); // left eyebrow
+	line(x + 20, y - 85, x + 75, y - 95); // right eye brow
 	
 	stroke("black");
+	strokeWeight(2);
 	noFill();
 	line(x - 10, y - 30, x - 30, y + 5); // nose
 	line(x - 30, y + 5, x, y + 5); // nose
 
-	line(x - 30, y + 56, x + 23, y + 56) // lip break
+	
+	
 
 
 

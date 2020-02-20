@@ -9,8 +9,12 @@
 var x = 320; // origin for face
 var y = 180;
 
-let value = "#d1d0be";
-let valueB = "#031540";
+var r = 255; // color vriables
+var g = 255;
+var b = 255;
+
+let value = "#d1d0be"; // skin color origin
+let valueB = "#031540"; // hair color origin
 
 
 // size variables
@@ -21,6 +25,13 @@ function setup() {
 	createCanvas(x * 2, y * 2);
 }
 
+// Changes eye color
+function mouseDragged() {
+	r = map(mouseX, 0, width, 0, 255); // red
+	g = map(mouseY, 0, height + width, 0, 255); // green
+	b = map((mouseX + mouseY), 0, width + height, 0, 255); // blue
+}
+
 function draw() {
 	// draw scope
 	background("#630000");
@@ -29,6 +40,8 @@ function draw() {
 
 	// face area
 	
+	//x = mouseX
+	//y = mouseY
 
 	stroke("black");
 	strokeWeight(5);
@@ -38,11 +51,11 @@ function draw() {
 	// eyes
 	stroke("black");
 	strokeWeight(2);
-	fill("#f2e935");
+	fill(b, g, r);
 	ellipse(x - 50, y - 60, s - 230, s - 250); // left eye
 	ellipse(x + 50, y - 60, s - 230, s - 250); // right eye
 	noStroke();
-	fill("black"); 
+	fill(g, r, b); 
 	ellipse(x - 50, y - 53, s - 285, s - 265); // left pupil
 	ellipse(x + 50, y - 53, s - 285, s - 265); // right pupil
 	noStroke();
@@ -122,9 +135,8 @@ function draw() {
 		valueB = "#ffffff";
 	}
 		if (keyCode === SHIFT) {
-		x = x + 10; y = y + 10; s = s +10;
+		x = x; y = y; s = s +10;
 	}else if (keyCode === BACKSPACE) {
-		x = x - 10; y = y - 10; s = s - 10;
+		x = x; y = y; s = s - 10;
 	}
 }
-

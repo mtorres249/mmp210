@@ -9,7 +9,7 @@
 var x = 320; // origin for face
 var y = 180;
 
-var r = 255; // color vriables
+var r = 255; // color variables
 var g = 255;
 var b = 255;
 

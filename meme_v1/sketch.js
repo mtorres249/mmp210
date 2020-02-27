@@ -3,29 +3,44 @@
 	2.25.2020
 */
 
+// global scope
+var cryImage;
+
+//size variables
+var w = 250; // half width of canvas
+var h = 250; // half hieght of canvas
+
+function preload(){
+	cryImage = loadImage("cry.png");
+}
+
 function setup() {
-	var canvas = createCanvas(500, 500);
+	var canvas = createCanvas(w * 2, h * 2);
 	canvas.drawingContext.miterLimit = 5;
 }
 
 function draw() {
-	background("#1c1500");
+	background("#050712");
 
-	textSize(100);
-	fill("#610b0b");
-	stroke("white");
+	// draw the image
+	image(cryImage, 0, 0, width);
+
+	// text
+	textSize(50);
+	fill("white");
+	stroke("black");
 	strokeWeight(5);
 	textStyle(BOLD);
 	textAlign(LEFT);
 	textFont("Trebuchet MS");
-	text("MILLER S", 40, 250);
+	text("When you're making", w - 240, h - 195);
 
-	strokeWeight(3);
-	textSize(90);
-	text("⋆", 363, 220);
-
-	textSize(40);
-	noStroke();
-	text("ALE ⋆ HOUSE", 140, 300);
 	textAlign(CENTER);
+	text("a meme", w, h - 140);
+
+	textAlign(LEFT);
+	text("but all the good pics", w -240, h + 180);
+
+	textAlign(CENTER);
+	text("are copyrighted",w, h+ 230);
 }

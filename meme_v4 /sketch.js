@@ -18,8 +18,6 @@ var instructions = "press me";
 var x;
 var y;
 
-//var rot = frameCount / 1000 * PI;
-
 function preload() {
 	cryImage = loadImage("cry.png");
 	overhereImage = loadImage("overhere.png");
@@ -100,12 +98,7 @@ function draw() {
 		image(overhereImage, width/2, height/2, width , height,);
 	}
 
-	 //text
-
-		translate(0, 0);
-		var rot = frameCount / 600 * PI;
-		shearX(rot);
-
+	 text
 	textSize(50);
 	fill("white");
 	stroke("black");

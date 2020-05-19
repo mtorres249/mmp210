@@ -122,8 +122,12 @@ function keyPressed(){
 	if(keyCode == 71) { // G key
 		laserSound.play();
 	}
-	if(keyCode == 13) { // Space bar
-		music.play();
+		if(keyCode == 13) { //enter key
+		if (music.isPlaying()) {
+			music.pause();
+		} else {
+			music.play();
+		}
 	}
 }
 

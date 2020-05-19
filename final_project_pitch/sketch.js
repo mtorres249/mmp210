@@ -74,7 +74,7 @@ function draw() {
 		square(550, 415, 140, 30, 30, 5, 5);
 	} else if(currentSlide == 3) {
 		title = "Sound";
-		description = "Sound that will play when key is pressed, as well as background music. Enter key for music. Space bar for laser.";
+		description = "Sound that will play when key is pressed, as well as background music. Enter key for music. G key for laser.";
 }
 
 	//display title
@@ -119,10 +119,10 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyCode == 32) {
+	if(keyCode == 71) { // G key
 		laserSound.play();
 	}
-	if(keyCode == 13) {
+	if(keyCode == 13) { // Space bar
 		music.play();
 	}
 }

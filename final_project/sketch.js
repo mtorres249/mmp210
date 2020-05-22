@@ -11,7 +11,7 @@ var explosionSound
 var x = 200;
 var y = 500;
 var v = 100; //x variable for speed
-var speed = 7;
+var speed = 1;
 
 function preload() {
 	music = loadSound("sawsquarenoise.mp3");
@@ -44,57 +44,25 @@ function draw() {
 		fill('white');
 		rect(x - 60, 640, 100, 25);
 
-		//asteroid
+		for (let x = 50; x <= 900; x += 155){
+
+		//alien	loop
+		fill('green');
+		square(x + v , 50, 90, 30, 30, 5, 5);
+
+		//asteroid loop
 		fill('yellow');
 		noStroke();
-		ellipse(v, 420, 90, 90);
-
-		//alien
-		fill('green');
-		square(v + 100, 140, 90, 30, 30, 5, 5);
-
-		//asteroid
-		fill('yellow');
-		noStroke();
-		ellipse(v, 100, 90, 90);
-
-		//alien
-		fill('green');
-		square(v + 190, 260, 90, 30, 30, 5, 5);
-
-		//asteroid
-		fill('yellow');
-		noStroke();
-		ellipse(v - 200, 320, 90, 90);
-
-		//alien
-		fill('green');
-		square(v - 150, 150, 90, 30, 30, 5, 5);
-
-		//asteroid
-		fill('yellow');
-		noStroke();
-		ellipse(v + 80, 310, 90, 90);
-
-		//alien
-		fill('green');
-		square(v - 400, 400, 90, 30, 30, 5, 5);
-
-		//asteroid
-		fill('yellow');
-		noStroke();
-		ellipse(v + 300, 400, 90, 90);
-
-		//alien
-		fill('green');
-		square(v + 400, 205, 90, 30, 30, 5, 5);
-		v += speed;
-		if (v > 750 || v < 0) {
-		speed *= -1;
-	}
+		ellipse(x + v, 250, 90, 90);
+			
+			v += speed;
+			 if (v > 275 || v < -150) {
+		     speed *= -1;
+			}
+		}
 }
 
-function keyPressed(){
+function keyPressed() {
 	if(keyCode == 75) { // K key
 		laserSound.play();
 	}
